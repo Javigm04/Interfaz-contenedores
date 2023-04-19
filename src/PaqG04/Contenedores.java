@@ -7,14 +7,20 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Contenedores extends JFrame{
-    private JButton boton1;
-    private JButton boton2;
-    private JTextField texto1;
+    private JButton button17;
+    private JButton button19;
+    private JButton button20;
+    private JButton button18;
+    private JTextField textField1;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JTextField textField4;
+    private JTextField textField5;
+    private JTextField textField6;
+    private JTextField textField7;
+    private JTextField textField8;
     private JTextField texto2;
-    private JLabel titulo;
     private JPanel Contenedores;
-    private JLabel Contenedor;
-    private JButton apilarButton;
 
     Contenedores(){
         setTitle("Contenedores");
@@ -22,19 +28,7 @@ public class Contenedores extends JFrame{
         setDefaultCloseOperation(JInternalFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setContentPane(Contenedores);
-        boton1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
-            }
-        });
-        apilarButton.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-                System.out.println("Me has clikado");
-            }
-        });
     }
     public static void main(String[] args) {
         Contenedores contenedores=new Contenedores();
