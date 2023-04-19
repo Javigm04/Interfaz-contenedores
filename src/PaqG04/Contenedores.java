@@ -54,6 +54,12 @@ public class Contenedores extends JFrame{
                 textPane1.setText(Valencia.calcularContenedoresDeterminadoPais(pais.getText()));
             }
         });
+        desapilarButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+        });
     }
     public static void main(String[] args) {
         Contenedores contenedores=new Contenedores();
