@@ -31,7 +31,7 @@
           <text value="Aduana"/>
         </properties>
       </component>
-      <component id="6c8fe" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="6c8fe" class="javax.swing.JTextField" binding="id">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -39,7 +39,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="2f494" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="2f494" class="javax.swing.JTextField" binding="peso">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -49,7 +49,7 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="e466e" class="javax.swing.JTextField" default-binding="true">
+      <component id="e466e" class="javax.swing.JTextField" binding="pais">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -59,7 +59,7 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="1388e" class="javax.swing.JTextField" default-binding="true">
+      <component id="1388e" class="javax.swing.JTextField" binding="aduana">
         <constraints>
           <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -142,7 +142,7 @@
           <text value="EmpresaRecibe"/>
         </properties>
       </component>
-      <component id="88746" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+      <component id="88746" class="javax.swing.JTextField" binding="prioridad">
         <constraints>
           <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -150,7 +150,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="c0693" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+      <component id="c0693" class="javax.swing.JTextField" binding="descripcion">
         <constraints>
           <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -158,7 +158,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="ebfd7" class="javax.swing.JTextField" binding="textField6" default-binding="true">
+      <component id="ebfd7" class="javax.swing.JTextField" binding="empresaenvia">
         <constraints>
           <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -166,7 +166,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="6e01c" class="javax.swing.JTextField" binding="textField7" default-binding="true">
+      <component id="6e01c" class="javax.swing.JTextField" binding="empresarecibe">
         <constraints>
           <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -212,14 +212,6 @@
         <border type="none"/>
         <children/>
       </grid>
-      <component id="f647e" class="javax.swing.JTextField" binding="textField4" default-binding="true">
-        <constraints>
-          <grid row="7" column="1" row-span="5" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="500"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
       <component id="aa90c" class="javax.swing.JLabel">
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
@@ -251,6 +243,14 @@
         <properties>
           <text value="ContenedorPorPais"/>
         </properties>
+      </component>
+      <component id="6c642" class="javax.swing.JTextPane" binding="textPane1" default-binding="true">
+        <constraints>
+          <grid row="7" column="1" row-span="5" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="500"/>
+          </grid>
+        </constraints>
+        <properties/>
       </component>
     </children>
   </grid>
