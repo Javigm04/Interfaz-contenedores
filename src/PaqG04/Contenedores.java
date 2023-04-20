@@ -10,12 +10,12 @@ public class Contenedores extends JFrame{
     private JButton mostrarDatosButton;
     private JButton apilarButton;
     private JTextField id;
-    private JTextField peso;
-    private JTextField prioridad;
+    private JTextField Tpeso;
+    private JTextField Tprioridad;
     private JTextField resultados;
-    private JTextField descripcion;
-    private JTextField empresaenvia;
-    private JTextField empresarecibe;
+    private JTextField Tdescripcion;
+    private JTextField Tempresaenvia;
+    private JTextField Tempresarecibe;
     private JTextField textField8;
     private JTextField texto2;
     private JPanel Contenedores;
@@ -36,6 +36,7 @@ public class Contenedores extends JFrame{
             @Override
             public void mouseClicked(MouseEvent e) {
                 int idCampo = Integer.parseInt(id.getText());
+                int peso=Integer.parseInt(Tpeso.getText());
                 boolean prueba = checkPrueba.isSelected();
                 Boolean.parseBoolean("True");
                 Double.parseDouble(id.getText());
