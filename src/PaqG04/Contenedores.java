@@ -21,8 +21,8 @@ public class Contenedores extends JFrame{
     private JPanel Contenedores;
     private JButton contenedorPorPaisButton;
     private JTextField pais;
-    private JTextField aduana;
     private JTextPane textPane1;
+    private JCheckBox checkPrueba;
 
     Contenedores(){
         setTitle("Contenedores");
@@ -35,6 +35,10 @@ public class Contenedores extends JFrame{
         apilarButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                int idCampo = Integer.parseInt(id.getText());
+                boolean prueba = checkPrueba.isSelected();
+                Boolean.parseBoolean("True");
+                Double.parseDouble(id.getText());
             }
         });
         mapaButton.addMouseListener(new MouseAdapter() {
