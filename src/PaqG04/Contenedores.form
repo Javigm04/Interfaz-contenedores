@@ -39,7 +39,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="2f494" class="javax.swing.JTextField" binding="peso">
+      <component id="2f494" class="javax.swing.JTextField" binding="Tpeso">
         <constraints>
           <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -132,7 +132,7 @@
           <text value="EmpresaRecibe"/>
         </properties>
       </component>
-      <component id="88746" class="javax.swing.JTextField" binding="prioridad">
+      <component id="88746" class="javax.swing.JTextField" binding="Tprioridad">
         <constraints>
           <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -140,7 +140,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="c0693" class="javax.swing.JTextField" binding="descripcion">
+      <component id="c0693" class="javax.swing.JTextField" binding="Tdescripcion">
         <constraints>
           <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -148,7 +148,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="ebfd7" class="javax.swing.JTextField" binding="empresaenvia">
+      <component id="ebfd7" class="javax.swing.JTextField" binding="Tempresaenvia">
         <constraints>
           <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -156,7 +156,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="6e01c" class="javax.swing.JTextField" binding="empresarecibe">
+      <component id="6e01c" class="javax.swing.JTextField" binding="Tempresarecibe">
         <constraints>
           <grid row="5" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -244,10 +244,10 @@
       </component>
       <component id="7f831" class="javax.swing.JCheckBox" binding="checkPrueba">
         <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="CheckBox"/>
+          <text value=""/>
         </properties>
       </component>
     </children>

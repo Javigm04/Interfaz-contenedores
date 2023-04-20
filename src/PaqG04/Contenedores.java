@@ -36,7 +36,7 @@ public class Contenedores extends JFrame{
             @Override
             public void mouseClicked(MouseEvent e) {
                 int idCampo = Integer.parseInt(id.getText());
-                int peso=Integer.parseInt(Tpeso.getText());
+                double peso=Double.parseDouble(Tpeso.getText());
                 boolean prueba = checkPrueba.isSelected();
                 Boolean.parseBoolean("True");
                 Double.parseDouble(id.getText());
