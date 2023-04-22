@@ -66,6 +66,7 @@ public class Contenedores extends JFrame{
         mostrarDatosButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                //Para mostrar los datos de un contenedor, cogemos el id del campo Id y llamamos a la función del hub
                 int idCampo = Integer.parseInt(id.getText());
                 textPane1.setText(Valencia.mostrarDatos(idCampo));
                 id.setText("");
@@ -74,6 +75,8 @@ public class Contenedores extends JFrame{
         contenedorPorPaisButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                //Para calcular el número de contenedores de un país, cogemos el texto del campo País y llamamos a la función
+                //del hub.
                 textPane1.setText(Valencia.calcularContenedoresDeterminadoPais(Tpais.getText()));
                 Tpais.setText("");
             }
