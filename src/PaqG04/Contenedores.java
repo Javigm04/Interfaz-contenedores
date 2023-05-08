@@ -1,6 +1,8 @@
 package PaqG04;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -11,7 +13,6 @@ public class Contenedores extends JFrame{
     private JButton apilarButton;
     private JTextField id;
     private JTextField Tpeso;
-    private JTextField Tprioridad;
     private JTextField Tdescripcion;
     private JTextField Tempresaenvia;
     private JTextField Tempresarecibe;
@@ -19,14 +20,17 @@ public class Contenedores extends JFrame{
     private JTextField texto2;
     private JPanel Contenedores;
     private JButton contenedorPorPaisButton;
-    private JTextField Tpais;
     private JTextPane textPane1;
     private JCheckBox checkPrueba;
     private JTextField Tcolumna;
+    private JRadioButton prioridad1;
+    private JRadioButton prioridad2;
+    private JRadioButton prioridad3;
+    private JComboBox campoPais;
 
     Contenedores(){
         setTitle("Contenedores");
-        setSize(1000,700);
+        setSize(1050,700);
         setDefaultCloseOperation(JInternalFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setContentPane(Contenedores);
@@ -39,19 +43,27 @@ public class Contenedores extends JFrame{
                 //Pasamos los valores escritos a manos en la interfaz a su formato correspondiente
                 int idCampo = Integer.parseInt(id.getText());
                 double pesoCampo=Double.parseDouble(Tpeso.getText());
-                String paisCampo=Tpais.getText();
+                //cojo el país del combo
+                String paisCampo=campoPais.getSelectedItem().toString();
                 boolean aduanasCampo = checkPrueba.isSelected();
-                int prioridadCampo = Integer.parseInt(Tprioridad.getText());
+                //compruebo el botón de la prioridad que está pulsado, si ningún botón está pulsado la prioridad será 3
+                int prioridad=3;
+                if(prioridad1.isSelected()){
+                    prioridad=1;
+                }else if(prioridad2.isSelected()){
+                    prioridad=2;
+                }
                 String descripcionCampo=Tdescripcion.getText();
                 String empresaEnviaCampo=Tempresaenvia.getText();
                 String empresaRecibeCampo=Tempresarecibe.getText();
-                Contenedor contenedor=new Contenedor(idCampo,pesoCampo,paisCampo,aduanasCampo,prioridadCampo,descripcionCampo,empresaEnviaCampo,empresaRecibeCampo);
+                Contenedor contenedor=new Contenedor(idCampo,pesoCampo,paisCampo,aduanasCampo,prioridad,descripcionCampo,empresaEnviaCampo,empresaRecibeCampo);
                 Valencia.apilarContenedor(contenedor);
                 //Borramos los campos (preguntar mañana en clase)
                 id.setText("");
                 Tpeso.setText("");
-                Tpais.setText("");
-                Tprioridad.setText("");
+                prioridad1.setSelected(false);
+                prioridad2.setSelected(false);
+                prioridad3.setSelected(false);
                 Tdescripcion.setText("");
                 Tempresaenvia.setText("");
                 Tempresarecibe.setText("");
@@ -75,10 +87,9 @@ public class Contenedores extends JFrame{
         contenedorPorPaisButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Para calcular el número de contenedores de un país, cogemos el texto del campo País y llamamos a la función
+                //Para calcular el número de contenedores de un país, cogemos un país del combo y llamamos a la función
                 //del hub.
-                textPane1.setText(Valencia.calcularContenedoresDeterminadoPais(Tpais.getText()));
-                Tpais.setText("");
+                textPane1.setText(Valencia.calcularContenedoresDeterminadoPais(campoPais.getSelectedItem().toString()));
             }
         });
         desapilarButton.addMouseListener(new MouseAdapter() {
@@ -90,6 +101,34 @@ public class Contenedores extends JFrame{
                 Valencia.desapilar(columnaCampo);
                 //Dejo campo vacío
                 Tcolumna.setText("");
+            }
+        });
+        //Hacemos los listener de los botones de la prioridad para que no se pueda seleccionar más de uno a la vez
+        prioridad1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(prioridad1.isSelected()){
+                    prioridad2.setSelected(false);
+                    prioridad3.setSelected(false);
+                }
+            }
+        });
+        prioridad2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(prioridad2.isSelected()){
+                    prioridad1.setSelected(false);
+                    prioridad3.setSelected(false);
+                }
+            }
+        });
+        prioridad3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(prioridad3.isSelected()){
+                    prioridad2.setSelected(false);
+                    prioridad1.setSelected(false);
+                }
             }
         });
     }
