@@ -5,6 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class Contenedores extends JFrame{
     private JButton mapaButton;
@@ -27,6 +31,7 @@ public class Contenedores extends JFrame{
     private JRadioButton prioridad2;
     private JRadioButton prioridad3;
     private JComboBox campoPais;
+    private Hub Valencia;
 
     Contenedores(){
         setTitle("Contenedores");
@@ -35,7 +40,17 @@ public class Contenedores extends JFrame{
         setVisible(true);
         setContentPane(Contenedores);
         //Creamos el hub con el que vamos a trabajar
-        Hub Valencia=new Hub(10,12);
+        Valencia=new Hub(10,12);
+        try{
+            FileInputStream fis=new FileInputStream("puerto.dat");
+            ObjectInputStream entrada=new ObjectInputStream(fis);
+            Valencia = (Hub) entrada.readObject(); //es necesario el casting
+            fis.close(); // no es obligatorio pero es recomendable
+            entrada.close(); // no es obligatorio pero es recomendable
+        }catch (Exception e){
+//Si el fichero no existe y aparece un error se crea el Puerto con el constructor por defecto
+            Valencia = new Hub(10,12);
+        }
 
         apilarButton.addMouseListener(new MouseAdapter() {
             @Override
@@ -67,6 +82,19 @@ public class Contenedores extends JFrame{
                 Tdescripcion.setText("");
                 Tempresaenvia.setText("");
                 Tempresarecibe.setText("");
+                FileOutputStream fos = null;
+                ObjectOutputStream salida = null;
+                try {
+                    fos = new FileOutputStream("puerto.dat");
+                    salida = new ObjectOutputStream(fos);
+                    salida.writeObject(Valencia);
+                    fos.close();
+                    salida.close();
+                } catch (Exception ex) {
+                    // si aparece un error se muestra en pantalla el tipo de error
+                    ex.printStackTrace();
+                }
+
             }
         });
         mapaButton.addMouseListener(new MouseAdapter() {
@@ -101,6 +129,18 @@ public class Contenedores extends JFrame{
                 Valencia.desapilar(columnaCampo);
                 //Dejo campo vacío
                 Tcolumna.setText("");
+                FileOutputStream fos = null;
+                ObjectOutputStream salida = null;
+                try {
+                    fos = new FileOutputStream("puerto.dat");
+                    salida = new ObjectOutputStream(fos);
+                    salida.writeObject(Valencia);
+                    fos.close();
+                    salida.close();
+                } catch (Exception ex) {
+                    // si aparece un error se muestra en pantalla el tipo de error
+                    ex.printStackTrace();
+                }
             }
         });
         //Hacemos los listener de los botones de la prioridad para que no se pueda seleccionar más de uno a la vez
